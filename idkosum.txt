@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr.ID Kosum Pet Clinic - คลินิกหมออิฐโกสุมรักษาสัตว์</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
+    body {
+      font-family: 'Kanit', sans-serif;
+    }
+    .bg-navy {
+      background-color: #0F2B48;
+    }
+    .text-navy {
+      color: #0F2B48;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 pb-20 md:pb-0">
+
+  <!-- Header / Navigation (Minimal Deep Navy Bar) -->
+  <header class="bg-navy text-white sticky top-0 z-40 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <img src="134833.jpg" alt="Logo" class="h-10 w-auto bg-white rounded-md p-1 shadow-sm">
+        <div>
+          <h1 class="text-base md:text-lg font-bold leading-tight">คลินิกหมออิฐโกสุมรักษาสัตว์</h1>
+          <p class="text-xs text-blue-200">Dr.ID Kosum Pet Clinic</p>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center space-x-6 text-sm">
+        <a href="#
