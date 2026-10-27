@@ -12,26 +12,309 @@
     body {
       font-family: 'Kanit', sans-serif;
     }
-    .bg-navy {
-      background-color: #0F2B48;
-    }
-    .text-navy {
-      color: #0F2B48;
-    }
+    .bg-navy-dark { background-color: #0F2B48; }
+    .bg-navy-card { background-color: #163C65; }
+    .text-navy { color: #0F2B48; }
+    .border-navy { border-color: #0F2B48; }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800 pb-20 md:pb-0">
+<body class="bg-slate-50 text-slate-800 pb-20 md:pb-0 min-h-screen">
 
-  <!-- Header / Navigation (Minimal Deep Navy Bar) -->
-  <header class="bg-navy text-white sticky top-0 z-40 shadow-md">
+  <!-- Navigation (Minimal Deep Navy Header) -->
+  <header class="bg-navy-dark text-white sticky top-0 z-40 shadow-lg border-b border-slate-700/50">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       <div class="flex items-center space-x-3">
-        <img src="134833.jpg" alt="Logo" class="h-10 w-auto bg-white rounded-md p-1 shadow-sm">
+        <img src="134833.jpg" alt="Dr.ID Kosum Pet Clinic Logo" class="h-10 w-auto bg-white rounded-lg p-1 shadow-sm object-contain">
         <div>
-          <h1 class="text-base md:text-lg font-bold leading-tight">คลินิกหมออิฐโกสุมรักษาสัตว์</h1>
-          <p class="text-xs text-blue-200">Dr.ID Kosum Pet Clinic</p>
+          <h1 class="text-base md:text-lg font-bold leading-tight tracking-wide">คลินิกหมออิฐโกสุมรักษาสัตว์</h1>
+          <p class="text-[11px] text-sky-200 font-light">Dr.ID Kosum Pet Clinic</p>
         </div>
       </div>
 
-      <nav class="hidden md:flex items-center space-x-6 text-sm">
-        <a href="#
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-light">
+        <a href="#services" class="hover:text-sky-300 transition-colors">บริการของเรา</a>
+        <button onclick="openVaccineModal()" class="hover:text-sky-300 transition-colors">ราคาวัคซีน</button>
+        <a href="#home-visit" class="hover:text-sky-300 transition-colors">บริการนอกสถานที่</a>
+        <a href="#contact" class="hover:text-sky-300 transition-colors">ติดต่อเรา</a>
+        <a href="tel:0638585306" class="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-full text-xs font-medium transition shadow-sm flex items-center">
+          <i class="fa-solid fa-phone mr-1.5"></i> 063-8585306
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="bg-gradient-to-b from-[#0F2B48] via-[#163C65] to-slate-900 text-white py-14 px-4 text-center relative overflow-hidden">
+    <div class="max-w-3xl mx-auto space-y-5 relative z-10">
+      <div class="inline-block bg-white/10 backdrop-blur-md p-3 rounded-2xl border border-white/10 shadow-2xl">
+        <img src="134833.jpg" alt="Logo" class="h-28 w-auto mx-auto bg-white p-2 rounded-xl object-contain">
+      </div>
+      <div class="space-y-2">
+        <h2 class="text-2xl md:text-4xl font-bold tracking-tight">คลินิกหมออิฐโกสุมรักษาสัตว์</h2>
+        <p class="text-sm md:text-base text-sky-200 font-light">Dr.ID Kosum Pet Clinic</p>
+      </div>
+      <div class="pt-2">
+        <p class="text-base md:text-xl font-normal text-amber-300 max-w-xl mx-auto italic">
+          “ให้เราดูแลสัตว์เลี้ยงของท่านดั่งคนในครอบครัว”
+        </p>
+      </div>
+      
+      <div class="flex flex-wrap justify-center gap-3 pt-4">
+        <button onclick="openVaccineModal()" class="bg-amber-500 hover:bg-amber-600 text-white font-medium px-6 py-2.5 rounded-full text-sm shadow-lg transition flex items-center">
+          <i class="fa-solid fa-syringe mr-2"></i> สอบถามราคาวัคซีน
+        </button>
+        <a href="#home-visit" class="bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-6 py-2.5 rounded-full text-sm shadow-lg transition flex items-center">
+          <i class="fa-solid fa-house-medical mr-2"></i> บริการนอกสถานที่
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Info Bar -->
+  <section class="bg-white border-b border-slate-200 shadow-sm py-3.5 px-4 text-xs md:text-sm text-slate-600">
+    <div class="max-w-5xl mx-auto flex flex-wrap justify-around items-center gap-4 text-center">
+      <div class="flex items-center"><i class="fa-regular fa-clock text-navy text-base mr-2"></i> เปิดทำการ: <strong class="ml-1 text-slate-800">08:00 - 20:00 น.</strong></div>
+      <div class="flex items-center"><i class="fa-solid fa-phone text-navy text-base mr-2"></i> โทร: <a href="tel:0638585306" class="ml-1 font-bold text-slate-800 hover:text-sky-600">063-8585306</a></div>
+      <a href="https://maps.app.goo.gl/aWjHmLneHcqDBMNo6" target="_blank" class="flex items-center text-sky-600 hover:text-sky-700 font-medium">
+        <i class="fa-solid fa-location-dot text-rose-500 text-base mr-1.5"></i> แผนที่คลินิก Google Maps
+      </a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="max-w-5xl mx-auto px-4 py-12">
+    <div class="text-center mb-10">
+      <h3 class="text-2xl font-bold text-navy">บริการของเรา</h3>
+      <p class="text-xs md:text-sm text-slate-500 mt-1">การดูแลและบริการทางการแพทย์ที่ครบวงจร</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+      <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition text-center space-y-3">
+        <div class="w-12 h-12 bg-sky-50 text-navy rounded-xl flex items-center justify-center mx-auto text-xl">
+          <i class="fa-solid fa-stethoscope"></i>
+        </div>
+        <h4 class="font-bold text-sm md:text-base text-slate-800">ตรวจรักษาทั่วไป</h4>
+        <p class="text-xs text-slate-500 font-light">วินิจฉัยและรักษาโรคโดยสัตวแพทย์</p>
+      </div>
+
+      <div onclick="openVaccineModal()" class="bg-white p-6 rounded-2xl border border-amber-200 bg-amber-50/20 shadow-sm hover:shadow-md transition text-center space-y-3 cursor-pointer group">
+        <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mx-auto text-xl group-hover:scale-110 transition-transform">
+          <i class="fa-solid fa-syringe"></i>
+        </div>
+        <h4 class="font-bold text-sm md:text-base text-slate-800">ฉีดวัคซีนป้องกันโรค</h4>
+        <p class="text-xs text-amber-600 font-medium">คลิกดูราคาวัคซีน <i class="fa-solid fa-chevron-right text-[10px]"></i></p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition text-center space-y-3">
+        <div class="w-12 h-12 bg-sky-50 text-navy rounded-xl flex items-center justify-center mx-auto text-xl">
+          <i class="fa-solid fa-scissors"></i>
+        </div>
+        <h4 class="font-bold text-sm md:text-base text-slate-800">ผ่าตัด - ทำหมัน</h4>
+        <p class="text-xs text-slate-500 font-light">ผ่าตัดทำหมันและศัลยกรรมทั่วไป</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition text-center space-y-3">
+        <div class="w-12 h-12 bg-sky-50 text-navy rounded-xl flex items-center justify-center mx-auto text-xl">
+          <i class="fa-solid fa-microscope"></i>
+        </div>
+        <h4 class="font-bold text-sm md:text-base text-slate-800">ตรวจเลือด / X-Ray</h4>
+        <p class="text-xs text-slate-500 font-light">ตรวจวินิจฉัยทางห้องปฏิบัติการ</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Home Visit Feature Section -->
+  <section id="home-visit" class="bg-slate-100 py-12 px-4">
+    <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm border border-slate-200/80 p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
+      <div class="w-20 h-20 md:w-28 md:h-28 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-3xl md:text-4xl shrink-0">
+        <i class="fa-solid fa-truck-medical"></i>
+      </div>
+      <div class="space-y-3 text-center md:text-left">
+        <span class="bg-emerald-100 text-emerald-800 text-[11px] font-medium px-3 py-1 rounded-full uppercase tracking-wider">บริการพิเศษ</span>
+        <h3 class="text-xl md:text-2xl font-bold text-navy">บริการหมอนอกสถานที่</h3>
+        <p class="text-sm text-slate-600 font-light leading-relaxed">
+          <strong class="text-slate-800 font-semibold">สะดวก รวดเร็ว ไม่ต้องเดินทางมาเอง!</strong> ช่วยลดความเครียดของสัตว์เลี้ยงจากการเดินทาง เหมาะสำหรับสัตว์เลี้ยงตื่นกลัว หรือเจ้าของที่ไม่สะดวกเดินทางมาคลินิก
+        </p>
+        <div class="flex flex-wrap justify-center md:justify-start gap-4 text-xs text-slate-600 pt-1">
+          <span class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-500 mr-1.5"></i> ตรวจรักษาถึงบ้าน</span>
+          <span class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-500 mr-1.5"></i> ฉีดวัคซีนถึงบ้าน</span>
+          <span class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-500 mr-1.5"></i> เคลื่อนย้ายสัตว์เลี้ยง</span>
+        </div>
+        <div class="pt-3">
+          <a href="tel:0638585306" class="inline-flex items-center bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-6 py-2.5 rounded-full text-sm shadow-md transition">
+            <i class="fa-solid fa-phone mr-2"></i> จองคิวนอกสถานที่ โทร 063-8585306
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Map Section -->
+  <section id="contact" class="max-w-5xl mx-auto px-4 py-12">
+    <div class="text-center mb-10">
+      <h3 class="text-2xl font-bold text-navy">ติดต่อและที่ตั้งคลินิก</h3>
+      <p class="text-xs md:text-sm text-slate-500 mt-1">พร้อมให้บริการสัตว์เลี้ยงของคุณทุกวัน</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+      <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-200/80 shadow-sm flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="flex items-start space-x-3">
+            <img src="134833.jpg" alt="Logo" class="h-10 w-auto bg-slate-50 p-1 rounded-lg border">
+            <div>
+              <h4 class="font-bold text-slate-800 text-base">คลินิกหมออิฐโกสุมรักษาสัตว์</h4>
+              <p class="text-xs text-slate-500">Dr.ID Kosum Pet Clinic</p>
+            </div>
+          </div>
+          <hr class="border-slate-100">
+          <div class="space-y-3 text-sm text-slate-600">
+            <div class="flex items-center space-x-3">
+              <div class="w-8 h-8 bg-slate-100 text-navy rounded-lg flex items-center justify-center text-sm shrink-0">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+              <span>เวลาทำการ: <strong>08:00 - 20:00 น.</strong> (เปิดทุกวัน)</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-8 h-8 bg-slate-100 text-navy rounded-lg flex items-center justify-center text-sm shrink-0">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <span>โทรศัพท์: <a href="tel:0638585306" class="text-navy font-bold hover:underline">063-8585306</a></span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://maps.app.goo.gl/aWjHmLneHcqDBMNo6" target="_blank" class="block w-full text-center bg-navy-dark hover:bg-slate-800 text-white font-medium py-3 rounded-2xl text-sm transition shadow-sm">
+            <i class="fa-solid fa-map-location-dot mr-2"></i> นำทางผ่าน Google Maps
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-slate-200 rounded-3xl overflow-hidden shadow-sm h-64 md:h-auto border border-slate-200 min-h-[260px]">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.0!2d103.0!3d16.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTYgw4s0MCAnJTIwTiAxMDPCsDAwJzAwIiBF!5e0!3m2!1sth!2sth!4v1600000000000" 
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vaccine Price Modal -->
+  <div id="vaccineModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-sm w-full p-6 relative shadow-2xl border border-slate-100">
+      <button onclick="closeVaccineModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-lg w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 transition">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="text-center mb-5">
+        <div class="w-12 h-12 bg-amber-100 text-amber-500 rounded-2xl flex items-center justify-center mx-auto text-xl mb-2">
+          <i class="fa-solid fa-syringe"></i>
+        </div>
+        <h3 class="text-lg font-bold text-navy">อัตราค่าบริการวัคซีน</h3>
+        <p class="text-xs text-slate-500">คลินิกหมออิฐโกสุมรักษาสัตว์</p>
+      </div>
+
+      <!-- Dog / Cat Tabs -->
+      <div class="flex bg-slate-100 p-1 rounded-xl mb-4">
+        <button id="tabDogBtn" onclick="switchTab('dog')" class="flex-1 py-1.5 text-center rounded-lg text-xs font-bold transition bg-white text-navy shadow-sm">
+          <i class="fa-solid fa-dog mr-1"></i> วัคซีนสุนัข
+        </button>
+        <button id="tabCatBtn" onclick="switchTab('cat')" class="flex-1 py-1.5 text-center rounded-lg text-xs font-medium text-slate-500 hover:text-slate-700 transition">
+          <i class="fa-solid fa-cat mr-1"></i> วัคซีนแมว
+        </button>
+      </div>
+
+      <!-- Dog Vaccines -->
+      <div id="dogContent" class="space-y-2.5">
+        <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+          <span class="text-xs font-medium text-slate-700">วัคซีนรวม 5 โรค</span>
+          <span class="text-xs font-bold text-navy bg-white px-2.5 py-1 rounded-lg border border-slate-200">250 บาท</span>
+        </div>
+        <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+          <span class="text-xs font-medium text-slate-700">วัคซีนรวม 6 โรค</span>
+          <span class="text-xs font-bold text-navy bg-white px-2.5 py-1 rounded-lg border border-slate-200">330 บาท</span>
+        </div>
+        <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+          <span class="text-xs font-medium text-slate-700">วัคซีนพิษสุนัขบ้า</span>
+          <span class="text-xs font-bold text-navy bg-white px-2.5 py-1 rounded-lg border border-slate-200">80 บาท</span>
+        </div>
+      </div>
+
+      <!-- Cat Vaccines -->
+      <div id="catContent" class="space-y-2.5 hidden">
+        <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+          <span class="text-xs font-medium text-slate-700">วัคซีนรวมแมว</span>
+          <span class="text-xs font-bold text-navy bg-white px-2.5 py-1 rounded-lg border border-slate-200">250 บาท</span>
+        </div>
+        <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+          <span class="text-xs font-medium text-slate-700">วัคซีนพิษสุนัขบ้า</span>
+          <span class="text-xs font-bold text-navy bg-white px-2.5 py-1 rounded-lg border border-slate-200">80 บาท</span>
+        </div>
+      </div>
+
+      <div class="mt-6 pt-3 border-t border-slate-100 space-y-2">
+        <a href="tel:0638585306" class="block w-full text-center bg-emerald-500 hover:bg-emerald-600 text-white font-medium py-2.5 rounded-xl text-xs transition shadow-sm">
+          <i class="fa-solid fa-phone mr-1"></i> โทรนัดหมายฉีดวัคซีน
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Mobile Bar -->
+  <div class="fixed bottom-0 left-0 right-0 bg-navy-dark text-white flex justify-around items-center py-2 px-2 md:hidden border-t border-slate-700/80 z-30 shadow-lg">
+    <button onclick="openVaccineModal()" class="flex flex-col items-center text-[10px] text-amber-300">
+      <i class="fa-solid fa-syringe text-base mb-0.5"></i>
+      <span>ราคาวัคซีน</span>
+    </button>
+    <a href="#home-visit" class="flex flex-col items-center text-[10px] text-emerald-300">
+      <i class="fa-solid fa-house-medical text-base mb-0.5"></i>
+      <span>หมอบ้าน</span>
+    </a>
+    <a href="https://maps.app.goo.gl/aWjHmLneHcqDBMNo6" target="_blank" class="flex flex-col items-center text-[10px] text-sky-200">
+      <i class="fa-solid fa-map-location-dot text-base mb-0.5"></i>
+      <span>แผนที่</span>
+    </a>
+    <a href="tel:0638585306" class="flex flex-col items-center text-[10px] text-white">
+      <i class="fa-solid fa-phone text-base mb-0.5 text-emerald-400"></i>
+      <span>โทรคลินิก</span>
+    </a>
+  </div>
+
+  <script>
+    // Initialize LINE LIFF SDK
+    document.addEventListener("DOMContentLoaded", function() {
+      if (window.liff) {
+        liff.init({ liffId: "2011925345-5YHb4LKn" })
+          .then(() => console.log("LIFF Initialized"))
+          .catch((err) => console.log("LIFF Error:", err));
+      }
+    });
+
+    function openVaccineModal() {
+      document.getElementById('vaccineModal').classList.remove('hidden');
+    }
+
+    function closeVaccineModal() {
+      document.getElementById('vaccineModal').classList.add('hidden');
+    }
+
+    function switchTab(type) {
+      const dogBtn = document.getElementById('tabDogBtn');
+      const catBtn = document.getElementById('tabCatBtn');
+      const dogContent = document.getElementById('dogContent');
+      const catContent = document.getElementById('catContent');
+
+      if (type === 'dog') {
+        dogBtn.className = 'flex-1 py-1.5 text-center rounded-lg text-xs font-bold transition bg-white text-navy shadow-sm';
+        catBtn.className = 'flex-1 py-1.5 text-center rounded-lg text-xs font-medium text-slate-500 hover:text-slate-700 transition';
+        dogContent.classList.remove('hidden');
+        catContent.classList.add('hidden');
+      } else {
+        catBtn.className = 'flex-1 py-1.5 text-center rounded-lg text-xs font-bold transition bg-white text-navy shadow-sm';
+        dogBtn.className = 'flex-1 py-1.5 text-center rounded-lg text-xs font-medium text-slate-500 hover:text-slate-700 transition';
+        catContent.classList.remove('hidden');
+        dogContent.classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
